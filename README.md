@@ -20,3 +20,12 @@ parser.add_argument('--config',default = "/mmsegmentation-main/configs/swin/swin
 
 ## 5.第五步，运行训练
 cd /mmsegmentation-main/tools 然后运行 python train.py即可。
+
+
+# 引用
+@misc{mmseg2020,
+    title={{MMSegmentation}: OpenMMLab Semantic Segmentation Toolbox and Benchmark},
+    author={MMSegmentation Contributors},
+    howpublished = {\url{https://github.com/open-mmlab/mmsegmentation}},
+    year={2020}
+}
