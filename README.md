@@ -5,7 +5,7 @@
 https://github.com/open-mmlab/mmsegmentation
 
 ## 2.第二步，下载所需要的库
-cd <the directory of mmsegmentation-main>；
+cd "the directory of mmsegmentation-main"
 python setup.py build；
 python setup.py install；
 ! 注意：mmcv里面有个很恶心的判定，你的版本既不能是最高的，也不能太低。个人建议选取比最高版本第一两个版本的即可，不然会报关于Assert的报错。
