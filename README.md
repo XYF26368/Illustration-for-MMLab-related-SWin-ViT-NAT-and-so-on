@@ -21,6 +21,7 @@ parser.add_argument('--config',default = "/mmsegmentation-main/configs/swin/swin
 ## 5.第五步，运行训练
 cd /mmsegmentation-main/tools 然后运行 python train.py即可。
 
+### 注：由于上1中提供的链接下载到的代码是最新由官方更改的，因此这里不提供相关代码，自行上mmsegmentation下载即可。做分类任务与目标检测任务也类似，可以上mmcls与mmdet的官方库下载最新的pipeline即可运行代码。
 
 # 引用
 @misc{mmseg2020,
