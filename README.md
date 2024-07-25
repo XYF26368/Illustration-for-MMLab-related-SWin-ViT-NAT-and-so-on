@@ -18,14 +18,45 @@ python setup.py install
 ```shell
 parser.add_argument('--config',default = "/mmsegmentation-main/configs/swin/swin-base-patch4-window7-in1k-pre_upernet_8xb2-160k_ade20k-512x512.py", help='train config file path')
 ```
-其中我用的是swin所以用的swin的路径。想用别的网络的话，可以到路径/mmsegmentation-main/configs/里面寻找，或者把你自己编写的具有这个路径里面其他网络相似结构的网络传到这个路径下。
+其中我用的是swin所以用的swin的路径。想用别的网络的话，可以到路径
+```shell
+/mmsegmentation-main/configs/
+```
+里面寻找。如果想用自己编写的模型的话，参考
+```shell
+/mmsegmentation-main/mmseg/models/backbones
+``
+里面的网络的结构，将你自己的模型写成类似结构，并放到该目录下面。另外，在目录
+```shell
+/mmsegmentation-main/configs
+```
+以及以下三个目录
+```shell
+/mmsegmentation-main/configs/_base_/models
+/mmsegmentation-main/configs/_base_/datasets
+/mmsegmentation-main/configs/_base_/schedules
+/mmsegmentation-main/configs/_base_/
+```
+在这些目录里面，需要仿照该swin任务的类似结构编写配置文件。以swin的任务为例，swin的配置文件与模型的位置分别如下：
+```shell
+configs:
+/mmsegmentation-main/configs/swin/swin-base-patch4-window7-in1k-pre_upernet_8xb2-160k_ade20k-512x512.py
+/mmsegmentation-main/configs/swin/swin-tiny-patch4-window7-in1k-pre_upernet_8xb2-160k_ade20k-512x512.py
+/mmsegmentation-main/configs/_base_/datasets/ade20k.py
+/mmsegmentation-main/configs/_base_/schedules/schedule_160k.py
+/mmsegmentation-main/configs/_base_/default_runtime.py
+/mmsegmentation-main/configs/_base_/models/upernet_swin.py
 
+model:
+/mmsegmentation-main/mmseg/models/backbones/swin.py
+```
 ## 4.第四步，更改配置文件的数据路径
 比如我使用ADE20K，那么我先找到
 ```shell
 /mmsegmentation-main/configs/_base_/datasets/ade20k.py
+/mmsegmentation-main/configs/_base_/datasets/ade20k_640x640.py
 ```
-把里面的data_root路径改为你存放ADEChallengeData2016的路径即可。
+把里面的data_root路径都改为你存放ADEChallengeData2016的路径即可。
 
 ## 5.第五步，运行训练
 ```shell
