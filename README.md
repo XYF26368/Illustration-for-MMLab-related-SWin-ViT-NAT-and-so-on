@@ -25,7 +25,8 @@ parser.add_argument('--config',default = "/mmsegmentation-main/configs/swin/swin
 里面寻找。如果想用自己编写的模型的话，参考
 ```shell
 /mmsegmentation-main/mmseg/models/backbones
-``
+```
+
 里面的网络的结构，将你自己的模型写成类似结构，并放到该目录下面。另外，在目录
 ```shell
 /mmsegmentation-main/configs
